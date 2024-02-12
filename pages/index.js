@@ -10,9 +10,10 @@ export default function Home() {
       <div className={styles.container}>
         <h1>HELLO NEXT JS !</h1>
         
-        <Link href={`/blog/${id}`}>
+        {/* <Link href={`/blog/${id}`}>
           Blog
-        </Link>
+        </Link> */}
+        <button className='btn btn-primary'>Cliquez ici</button>
       </div>
     </>
   )
