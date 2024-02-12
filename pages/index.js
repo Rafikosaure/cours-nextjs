@@ -1,5 +1,7 @@
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+// import Link from 'next/link'
+import Head from 'next/head'
+
 
 export default function Home() {
 
@@ -7,6 +9,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Le blog de la cuisine basque</title>
+      </Head>
       <div className={styles.container}>
         <h1>HELLO NEXT JS !</h1>
         

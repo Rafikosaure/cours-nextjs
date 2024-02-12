@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 export default function Article() {
@@ -10,9 +11,21 @@ export default function Article() {
   console.log(router.asPath)
   console.log(router.query)
 
+  const pushFonction = () => {
+    router.push('/')
+  }
+
   return (
-    <div>
-      <h1>10 plats savoureux</h1>
-    </div>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{router.query.slug}</title>
+      </Head>
+      <div>
+        <h1>10 plats basques</h1>
+        <button onClick={pushFonction}>Push to Home</button>
+      </div>
+    </>
+    
   )
 }
