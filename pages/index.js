@@ -1,26 +1,41 @@
-import styles from '../styles/Home.module.css'
-// import Link from 'next/link'
 import Head from 'next/head'
+import styles from '../styles/Home.module.css'
 
+export default function Home(props) {
 
-export default function Home() {
-
-  const id = "article"
+  console.log(props)
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Le blog de la cuisine basque</title>
+        <title>Titre</title>
       </Head>
-      <div className={styles.container}>
-        <h1>HELLO NEXT JS !</h1>
-        
-        {/* <Link href={`/blog/${id}`}>
-          Blog
-        </Link> */}
-        <button className='btn btn-primary'>Cliquez ici</button>
+      <div>
+        <h1 className={styles.titre}>Vocabulaire de base :</h1>
+        <table className={styles.tableau}>
+          <tbody>
+            {props.array.map(el => (
+              <tr key={el}>
+                <td>{el.en}</td>
+                <td>{el.fr}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+
+  const data = await import(`../data/vocabulary.json`)
+  const array = data.vocabulary
+
+  return {
+    props: {
+      array
+    }
+  }
 }
