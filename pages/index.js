@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { notFound } from 'next/navigation'
 
 export default function Home(props) {
 
@@ -32,6 +33,12 @@ export async function getStaticProps() {
 
   const data = await import(`../data/vocabulary.json`)
   const array = data.vocabulary
+
+  if (array.length === 0) {
+    return {
+      notFound: true
+    }
+  }
 
   return {
     props: {
