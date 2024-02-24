@@ -34,12 +34,20 @@ export async function getStaticProps() {
   const data = await import(`../data/vocabulary.json`)
   const array = data.vocabulary
 
-  if (array.length === 0) {
+  /* if (array.length === 0) {
     return {
       notFound: true
     }
-  }
+  } */
 
+  if (array.length === 0) {
+    return {
+      redirect: {
+        destination: '/swapi'
+      }
+    }
+  }
+  
   return {
     props: {
       array
