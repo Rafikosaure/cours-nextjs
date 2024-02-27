@@ -10,6 +10,7 @@ export default function Navbar() {
         <Link href={"/"}>Accueil</Link>
         <Link href={"/listes"}>Listes</Link>
         <Link href={"/swapi"}>Swapi</Link>
+        <Link href={"/cours"}>BTC</Link>
       </div>
     </>
   )

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 export default function Home(props) {
 
-  console.log(props)
+  // console.log(props)
 
   return (
     <>
