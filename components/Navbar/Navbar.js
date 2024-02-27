@@ -8,7 +8,7 @@ export default function Navbar() {
     <>
       <div className={styles.navbar}>
         <Link href={"/"}>Accueil</Link>
-        <Link href={"#"}>Blog</Link>
+        <Link href={"/listes"}>Listes</Link>
         <Link href={"/swapi"}>Swapi</Link>
       </div>
     </>

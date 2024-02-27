@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function Swapi(props) {
 
@@ -12,7 +13,7 @@ export default function Swapi(props) {
         <table className={styles.tableau}>
           <tbody>
             {props.data.results.map(person => (
-              <tr key={person.name}>
+              <tr key={uuidv4()}>
                 <td>{person.name}</td>
                 <td>{person.gender}</td>
               </tr>
