@@ -8,11 +8,8 @@
     font-size: 20px;
 }
 
-.tableau tr {
-    border: 1px solid #333;
-}
-
 .tableau td {
+    border: 1px solid #333;
     padding: 10px;
     text-align: center;
     min-width: 200px;
